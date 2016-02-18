@@ -6,7 +6,7 @@ body {
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
     color: white;
     overflow-x: hidden;
-    background: #15152F url('/images/bg.png');
+    background: #15152F url('../images/bg.png');
     background-size: cover;
     font-smoothing: antialiased;
 }
@@ -424,7 +424,7 @@ body {
 .footer .content .share {
     height: 48px;
     width: 191px;
-    background: url('/dest/images/btn-share.png') no-repeat;
+    background: url('../images/btn-share.png') no-repeat;
     background-size: contain;
     margin: 42px auto;
     transform: translateX(300%);
@@ -433,7 +433,7 @@ body {
     animation: flyInX 1s 2s forwards;
 }
 .rocket-wrap {
-    background: url('/dest/images/hole.png') no-repeat;
+    background: url('../images/hole.png') no-repeat;
     background-size: contain;
     margin: 48px auto 0;
     height: 145px;
