@@ -31,9 +31,12 @@ function generate(timestamp){
         Statics.find(function(err, docs){
             console.log(docs.length);
             for (var i = 0; i < docs.length; i++) {
-                if(docs[i].userCode > 119302 || docs[i].userCode < 116302) {
+                if(!docs[i].userName) {
                     continue;
                 }
+                //if(docs[i].userCode > 119302 || docs[i].userCode < 116302) {
+                //    continue;
+                //}
                 var data = {};
                 data.timestamp = timestamp;
                 data.userCode = docs[i].userCode;
@@ -50,12 +53,14 @@ function generate(timestamp){
                 if(data.workTime < 8) {
                     data.workTime = 8;
                 }
-                data.latestTime = docs[i].latestTime + '点';
+
+                data.latestTime = (docs[i].latestTime || 19);
                 if(docs[i].latestTime <= 5) {
                     data.latestTime = '凌晨' + data.latestTime;
                 } else if(docs[i].latestTime < 19) {
                     data.latestTime = '19';
                 }
+
 
                 data.takeWatchDistance = Math.round(docs[i].takeWatchCount * 5 / 100);
                 if(data.takeWatchDistance < 1) {
