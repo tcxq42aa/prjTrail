@@ -20,6 +20,7 @@ router.get('/', function (req, res, next) {
 });
 router.get('/index', function (req, res, next) {
     res.render('index2', {
+
         userCode: '86044',
         userName: '王小军',
         takeWatchCustomerCount: '100',

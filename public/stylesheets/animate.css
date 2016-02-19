@@ -110,10 +110,12 @@ body {
 .point-info span {
     color: #fff;
     font-size: 14px;
+    line-height: 1.4;
 }
 .point-info p {
     margin: 2px 0 0;
     font-size: 30px;
+    line-height: 1;
 }
 .t2 {
     color: rgb(235, 91, 66);
@@ -424,10 +426,10 @@ body {
     background: url('../images/btn-share.png') no-repeat;
     background-size: contain;
     margin: 42px auto;
-    transform: translateX(300%);
+    opacity: 0;
 }
 .footer .content .share.active {
-    animation: flyInX 1s 2s forwards;
+    animation: fadeIn 0.5s 2s forwards;
 }
 .rocket-wrap {
     background: url('../images/hole.png') no-repeat;
@@ -473,17 +475,17 @@ body {
     animation: twinkle3 .5s infinite linear;
 }
 .rocket-wrap.active .rocket {
-    animation: flyIn 1s 2s forwards;
+    animation: flyIn 1s 1.5s forwards;
 }
 .ad-text {
-    opacity: 0;
+    transform: translateY(330%);
 }
 .footer .ad-text p {
     margin-bottom: 5px;
     font-size: 12px;
 }
 .ad-text.active {
-    animation: fadeIn 1s 2s forwards;
+    animation: flyIn 1s 1.5s forwards;
 }
 
 .t-red {

@@ -31,8 +31,8 @@ $(document).ready(function(){
     });
 
     $('#p1').addClass('play');
-    $('.wrap').one('click', function(){
-        $(this).removeClass('init');
+    $('.main').one('touchstart', function(){
+        $('.wrap').removeClass('init');
         $('#p1').removeClass('infinite');
         $('.myInfo').remove();
         $('#scene_audio')[0].play();
