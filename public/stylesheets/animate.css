@@ -17,6 +17,8 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
+    -webkit-overflow-scrolling: touch;
+    transform: translate3d(0,0,0);
 }
 .wrap.init {
     top: 18%;
@@ -78,11 +80,12 @@ body {
     bottom:0;
     background-image: url('../images/point-0.png');
 }
-.point.play.active .spread i:nth-child(1) {
-    animation: spread 2s 1s 2 linear;
+.point.play.active .spread i {
+    animation: spread 2s linear;
+    animation-iteration-count: 2;
 }
-.point.play.active .spread i:nth-child(2) {
-    animation: spread 2s 2 linear;
+.point.play.active .spread i:nth-child(1) {
+    animation-delay: 1s;
 }
 .point.play.active.infinite .spread i {
     animation-iteration-count: infinite;
@@ -102,13 +105,7 @@ body {
 
 .point-info {
     position: absolute;
-    opacity: 0;
-    animation: fadeIn 1s 1s;
-    animation-play-state: paused;
-    animation-fill-mode: forwards;
-}
-.point-info.active {
-    animation-play-state: running;
+    display: none;
 }
 .point-info span {
     color: #fff;
@@ -444,7 +441,7 @@ body {
 }
 .rocket-wrap.active {
     display: block;
-    animation: scaleIn 1s 1s linear forwards;
+    animation: scaleIn .5s 1s linear forwards;
 }
 .rocket {
     height: 101px;

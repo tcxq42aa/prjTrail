@@ -2,10 +2,11 @@
 <html>
 <head>
     <title><%=userName%>@你, 一起来看看Ta的链家轨迹吧</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
     <link rel='stylesheet' href='../stylesheets/all_<%=timestamp%>.css'/>
     <script src="../javascripts/jquery.min.js"></script>
-    <script src="http://app.dooioo.com/native/native.min.js"></script>
+    <!--<script src="http://app.dooioo.com/native/native.min.js"></script>-->
     <script>
         var _hmt = _hmt || [];
         (function() {
@@ -17,6 +18,7 @@
     </script>
 </head>
 <body>
+<img src="http://i13.tietuku.com/39acfc4eed6367d7.jpg" width="0" height="0">
 <div class="scene-audio rt">
     <div class="scene-audio-pointer"></div>
     <div class="scene-audio-disk"></div>
@@ -140,11 +142,9 @@
 </body>
 <script type="text/javascript" src="../javascripts/all_<%=timestamp%>.js"></script>
 <script type="text/javascript">
-    Native.configShare({
-        title: '<%=userName%>@你, 一起来看看Ta的链家轨迹吧', // 分享标题
-        desc: '<%=joinTime%>, 我加入上海链家, 正式成为一名 “房产经纪人”...', // 分享描述
-        link: window.location.href, // 分享链接
-        imgUrl: 'http://i11.tietuku.com/63c04250b3eee016.jpg' // 分享图标
-    });
+    var title = '<%=userName%>@你, 一起来看看Ta的链家轨迹吧'; // 分享标题
+    var desc = '<%=joinTime%>, 我加入上海链家, 正式成为一名 “房产经纪人”...'; // 分享描述
+    var link = window.location.href; // 分享链接
+    var imgUrl = 'http://i13.tietuku.com/39acfc4eed6367d7.jpg'; // 分享图标
 </script>
 </html>

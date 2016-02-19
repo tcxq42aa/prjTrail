@@ -2,6 +2,14 @@
  * Created by charles on 16/2/17.
  */
 $(document).ready(function(){
+
+    Native.configShare({
+        title: title,
+        desc: desc,
+        link: link,
+        imgUrl: imgUrl
+    });
+
     $('.scene-audio').click(function(){
         if($(this).is('.play')) {
             $('#scene_audio')[0].pause();
@@ -26,7 +34,7 @@ $(document).ready(function(){
     $('.wrap').one('click', function(){
         $(this).removeClass('init');
         $('#p1').removeClass('infinite');
-        $('.finger,.myInfo').remove();
+        $('.myInfo').remove();
         $('#scene_audio')[0].play();
         $('.scene-audio').toggleClass('play');
         setTimeout(function () {
@@ -45,7 +53,9 @@ $(document).ready(function(){
             $line.addClass('active');
             setTimeout(function(){
                 $target.addClass('active play');
-                $text.addClass('active');
+                setTimeout(function(){
+                    $text.fadeIn(750);
+                }, 1000);
                 if($target.offset().top > $(document).height() / 2) {
                     var main = $('.main');
                     var t = 400;

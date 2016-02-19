@@ -46,7 +46,7 @@
             for(var k in options){
                 params.push(k + '=' + options[k]);
             }
-            window.location.href = mobileInterface + '::configShare:' + params;
+            window.location.href = mobileInterface + '::configShare:' + params.join('&');
         } else {
             w[mobileInterface] && w[mobileInterface].configShare(JSON.stringify(options));
         }

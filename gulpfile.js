@@ -36,7 +36,7 @@ gulp.task('js:lib', function(){
         .pipe(gulp.dest('public/dest/javascripts'));
 });
 gulp.task('js', function(){
-    return gulp.src('public/javascripts/app.js')
+    return gulp.src(['public/javascripts/app.js', 'public/javascripts/native.js'])
         .pipe(concat('all_' + timestamp + '.js'))
         .pipe(uglify())
         .pipe(gulp.dest('public/dest/javascripts'));
@@ -48,6 +48,9 @@ gulp.task('img', function(){
 });
 
 gulp.task('html', function(){
+    gulp.src('public/404.html')
+        .pipe(htmlmin({collapseWhitespace: true}))
+        .pipe(gulp.dest('public/dest'));
     return gulp.src('views/index2.ejs')
         .pipe(htmlmin({collapseWhitespace: true}))
         .pipe(gulp.dest('views/build'));
