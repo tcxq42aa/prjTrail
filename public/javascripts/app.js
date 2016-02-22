@@ -34,7 +34,7 @@ $(document).ready(function(){
     $('.main').one('touchstart', function(){
         $('.wrap').removeClass('init');
         $('#p1').removeClass('infinite');
-        $('.myInfo').remove();
+        $('.myInfo').fadeOut();
         $('#scene_audio')[0].play();
         $('.scene-audio').toggleClass('play');
         setTimeout(function () {
@@ -51,6 +51,13 @@ $(document).ready(function(){
                 $line = $($target.data('line'));
 
             $line.addClass('active');
+            var t1 = 400, t2 = 2500;
+            if(index == count - 1) {
+                t1 = 1800;
+            }
+            if(index == count - 2) {
+                t2 = 3500;
+            }
             setTimeout(function(){
                 $target.addClass('active play');
                 setTimeout(function(){
@@ -58,24 +65,18 @@ $(document).ready(function(){
                 }, 1000);
                 if($target.offset().top > $(document).height() / 2) {
                     var main = $('.main');
-                    var t = 400;
-                    if(index == count - 1) {
-                        t = 800;
-                    }
-                    main.animate({scrollTop: main[0].scrollTop + $target.offset().top - $pre.offset().top + 'px'}, t, function(){
+                    main.animate({scrollTop: main[0].scrollTop + $target.offset().top - $pre.offset().top + 'px'}, t1, function(){
                         if(index == count - 1) {
-                            $('.rocket-wrap').addClass('active');
                             $('.ad-text').addClass('active');
-                            $('.share').addClass('active')
+                            $('.share').addClass('active');
                         }
                     });
                 }
             }, 1000);
 
             setTimeout(function () {
-                index++;
-                next(index);
-            }, 2500);
+                next(index + 1);
+            }, t2);
         } else {
             $('.main').css('overflow', 'auto');
         }

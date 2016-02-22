@@ -429,7 +429,7 @@ body {
     opacity: 0;
 }
 .footer .content .share.active {
-    animation: fadeIn 0.5s 2s forwards;
+    animation: fadeIn 0.5s 3s forwards;
 }
 .rocket-wrap {
     background: url('../images/hole.png') no-repeat;
@@ -443,7 +443,7 @@ body {
 }
 .rocket-wrap.active {
     display: block;
-    animation: scaleIn .5s 1s linear forwards;
+    animation: scaleIn .5s 2s linear forwards;
 }
 .rocket {
     height: 101px;
@@ -475,7 +475,7 @@ body {
     animation: twinkle3 .5s infinite linear;
 }
 .rocket-wrap.active .rocket {
-    animation: flyIn 1s 1.5s forwards;
+    animation: flyIn 1s 2.5s forwards;
 }
 .ad-text {
     transform: translateY(330%);
