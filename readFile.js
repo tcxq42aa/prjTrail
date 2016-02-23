@@ -34,7 +34,7 @@ function generate(timestamp){
                 if(!docs[i].userName) {
                     continue;
                 }
-                //if(docs[i].userCode > 119302 || docs[i].userCode < 116302) {
+                //if(docs[i].userCode < 81000 || docs[i].userCode > 81100) {
                 //    continue;
                 //}
                 var data = {};
@@ -55,14 +55,14 @@ function generate(timestamp){
                 }
 
                 data.latestTime = (docs[i].latestTime || 19);
-                if(docs[i].latestTime <= 5) {
+                if(data.latestTime <= 5) {
                     data.latestTime = '凌晨' + data.latestTime;
-                } else if(docs[i].latestTime < 19) {
+                } else if(data.latestTime < 19) {
                     data.latestTime = '19';
                 }
 
 
-                data.takeWatchDistance = Math.round(docs[i].takeWatchCount * 5 / 100);
+                data.takeWatchDistance = (docs[i].takeWatchCount * 5 / 100).toFixed(1);
                 if(data.takeWatchDistance < 1) {
                     data.takeWatchDistance = 1;
                 }
@@ -74,6 +74,8 @@ function generate(timestamp){
                 var year = Math.floor((today.getTime() - docs[i].joinDate.getTime()) / oneYear);
                 if(year < 1) {
                     year = 1;
+                } else {
+                    year = year + 1;
                 }
                 data.joinTime = year + '年前';
                 data.goodCount = (docs[i].takeWatchCount - docs[i].commentCount) || 0;
@@ -81,7 +83,7 @@ function generate(timestamp){
                     data.goodCount = 30;
                 }
 
-                data.tksCount = docs[i].tksCount || 0;
+                data.tksCount = docs[i].thanksCount || 0;
                 if(data.tksCount < 5) {
                     data.tksCount = 5;
                 }

@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -28,8 +29,10 @@ body {
     left: 50%;
     top: 0;
     width: 320px;
+    height: 1901px;
     transform: translateX(-50%) translateZ(0);
     transition: top 1s;
+    background: transparent;
 }
 
 .agent-img {
@@ -154,7 +157,12 @@ body {
     top: 1028px;
     right: 107px;
 }
-
+.scroller {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 1901px;
+}
 #p1, #p2, #p3, #p4, #p5, #p6, #p7, #p8 {
     width: 80px;
     height: 80px;
