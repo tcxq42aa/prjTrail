@@ -3,12 +3,19 @@
  */
 $(document).ready(function(){
 
-    Native.configShare({
-        title: title,
-        desc: desc,
-        link: link,
-        imgUrl: imgUrl
-    });
+    //是否从APP打开
+    var fromApp = window.location.search.indexOf('from=agent') >= 0;
+    if(fromApp) {
+        Native.configShare({
+            title: title,
+            desc: desc,
+            link: link,
+            imgUrl: imgUrl
+        });
+    } else {
+        $('.share').hide();
+        $('.wrap').height(1802);
+    }
 
     $('.scene-audio').click(function(){
         if($(this).is('.play')) {
